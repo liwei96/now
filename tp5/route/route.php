@@ -1,0 +1,181 @@
+<?php
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006~2018 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liu21st <liu21st@gmail.com>
+// +----------------------------------------------------------------------
+
+Route::get('think', function () {
+    return 'hello,ThinkPHP5!';
+});
+Route::rule('/','index/index');
+Route::rule('export','export/index');
+Route::rule('sdf','export/create');
+Route::get('hello/:name', 'index/hello');
+Route::rule('/test','home/index/buy');
+Route::rule('/pro/create','api/project/create');
+Route::group('login',[
+    'getcode'=>'api/login/getcode',
+    'login'=>'api/login/login',
+]);
+Route::group('pro',[
+    'create'=>'api/project/create',
+    'update'=>'api/project/update',
+    'delete'=>'api/project/delete',
+    'index'=>'api/project/index',
+    'getarea'=>'api/project/getSubCate', 
+    'hetong'=>'api/project/upload_hetong',
+    'save'=>'api/project/save',
+    'saveimgs'=>'api/project/saveimgs',
+    'edit'=>'api/project/edit',
+    'delpics'=>'api/project/delpics',
+    'updatetext'=>'api/project/updatetext',
+    'tui'=>'api/project/tui',
+    'test'=>'api/project/test',
+    'img'=>'api/project/img',
+    'getareas'=>'api/project/getareas',
+    'ones'=>'api/project/ones',
+    'tuitong'=>'api/project/tuitong',
+    'xiatong'=>'api/project/xiatong',
+    'list'=>'api/project/list',
+    'sou'=>'api/project/sou',
+    'tsou'=>'api/project/tsou',
+    'dlist'=>'api/project/dlist',
+    'clist'=>'api/project/clist',
+    'tuisou'=>'api/project/tuisou'
+])->middleware('check');
+Route::group('tuan',[
+    'index'=>'api/tuan/edit',
+    'save'=>'api/tuan/update',
+])->middleware('check');
+Route::group('info',[
+    'index'=>'api/information/index',
+    'news'=>'api/information/news',
+    'create'=>'api/information/create',
+    'save'=>'api/information/save',
+    'nsave'=>'api/information/nsave',
+    'psou'=>'api/information/psou', 
+    'nsou'=>'api/information/nsou', 
+    'edit'=>'api/information/edit',
+    'nedit'=>'api/information/nedit',
+    'update'=>'api/information/update',
+    'nupdate'=>'api/information/nupdate',
+    'delete'=>'api/information/delete',
+    'ndelete'=>'api/information/ndelete',
+    'ntong'=>'api/information/ntong',
+    'ptong'=>'api/information/ptong'
+])->middleware('check');
+Route::group('guide',[
+    'index'=>'api/guide/index',
+    'save'=>'api/guide/save',
+    'edit'=>'api/guide/edit',
+    'update'=>'api/guide/update',
+    'delete'=>'api/guide/delete',
+    'tong'=>'api/guide/tong'
+])->middleware('check');
+Route::group('role',[
+    'index'=>'api/role/index',
+    'save'=>'api/role/save',
+    'edit'=>'api/role/edit',
+    'update'=>'api/role/update',
+    'delete'=>'api/role/delete',
+    'fen'=>'api/role/fen',
+    'list'=>'api/role/list'
+])->middleware('check');
+Route::group('user',[
+    'index'=>'api/user/index',
+    'save'=>'api/user/save',
+    'edit'=>'api/user/edit',
+    'update'=>'api/user/update',
+    'delete'=>'api/user/delete',
+    'tong'=>'api/user/tong',
+    'lists'=>'api/user/lists',
+    'area'=>'api/user/area',
+    'sou'=>'api/user/sou',
+    'like'=>'api/user/like',
+    'type'=>'api/user/type',
+    'zsave'=>'api/user/zsave',
+    'qedit'=>'api/user/qedit',
+    'qsave'=>'api/user/qsave',
+    'qupdate'=>'api/user/qupdate',
+    'qdelete'=>'api/user/qdelete',
+    'hsave'=>'api/user/hsave',
+    'hedit'=>'api/user/hedit',
+    'hupdate'=>'api/user/hupdate',
+    'hdelete'=>'api/user/hdelete',
+    'hindex'=>'api/user/hindex',
+    'qindex'=>'api/user/qindex'
+])->middleware('check');
+Route::group('dai',[
+    'index'=>'api/dai/index',
+    'save'=>'api/dai/save',
+    'edit'=>'api/dai/edit',
+    'update'=>'api/dai/update',
+    'delete'=>'api/dai/delete',
+    'list'=>'api/dai/list',
+    'tong'=>'api/dai/tong',
+    'duser'=>'api/dai/duser',
+    'dusersou'=>'api/dai/dusersou',
+    'dusertype'=>'api/dai/dusertype'
+])->middleware('check');
+Route::group('gen',[
+    'index'=>'api/gen/index',
+    'save'=>'api/gen/save',
+    'edit'=>'api/gen/edit',
+    'update'=>'api/gen/update',
+    'delete'=>'api/gen/delete',
+    'tong'=>'api/gen/tong'
+])->middleware('check');
+Route::group('tupai',[
+    'index'=>'api/tupai/index',
+    'save'=>'api/tupai/save',
+    'edit'=>'api/tupai/edit',
+    'update'=>'api/tupai/update',
+    'delete'=>'api/tupai/delete'
+])->middleware('check');
+Route::group('recording',[
+    'index'=>'api/recording/index',
+    'save'=>'api/recording/save',
+    'edit'=>'api/recording/edit',
+    'update'=>'api/recording/update',
+    'delete'=>'api/recording/delete',
+    'tong'=>'api/recording/tong',
+    'recordProject'=>'api/recording/recordProject',
+    'recordUser'=>'api/recording/recordUser',
+    'recordUserSou'=>'api/recording/recordUserSou',
+    'recordUserType'=>'api/recording/recordUserType',
+    'uindex'=>'api/recording/uindex',
+    'delpic'=>'api/recording/delpic',
+    'recordProjectDai'=>'api/recording/recordProjectDai',
+    'recordProjects'=>'api/recording/recordProjects',
+    'recordProjectSou'=>'api/recording/recordProjectSou'
+])->middleware('check');
+Route::group('staff',[
+    'index'=>'api/staff/index',
+    'save'=>'api/staff/save',
+    'edit'=>'api/staff/edit',
+    'update'=>'api/staff/update',
+    'delete'=>'api/staff/delete',
+    'list'=>'api/staff/list'
+])->middleware('check');
+Route::group('zhi',[
+    'index'=>'api/zhi/index',
+    'sou'=>'api/zhi/sou',
+    'save'=>'api/zhi/save',
+    'edit'=>'api/zhi/edit',
+    'update'=>'api/zhi/update',
+    'delete'=>'api/zhi/delete'
+])->middleware('check');
+Route::group('index',[
+    'index'=>'api/index/index',
+    'out'=>'api/index/out',
+    'list'=>'api/index/list',
+    'sou'=>'api/index/sou'
+])->middleware('check');
+return [ 
+
+];
